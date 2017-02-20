@@ -46,8 +46,11 @@ matrix:
 
 # travis-ci runs by default on ancient Ubuntu 12.04 (precise)
 # following options will give us Ubuntu 14.04 (trusty)
-sudo: required
 dist: trusty
+# container based (sudo-less) travis infrastructure may run faster
+# see https://docs.travis-ci.com/user/trusty-ci-environment/
+# and https://docs.travis-ci.com/user/migrating-from-legacy/
+sudo: false
 
 install:
   - bash ./.travis/install_linux.sh
